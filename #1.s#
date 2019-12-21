@@ -22,12 +22,12 @@ yjmwxwx:
 	.equ jishu,			0x20000030
 	.equ lvboqizhizhen,		0x20000040
 	.equ lvboqihuanchong,		0x20000044
-	.equ dang_qin_cha,		0X20000dcc
-	.equ shang_ci_cha,		0x20000dd0
-	.equ shang_ci_i,		0x20000dd4
-	.equ anjianyanshi,		0x20000dd8
-	.equ zhongliang,		0x20000ddc
-	.equ dianyabiao,		0x20000de0
+	.equ dang_qin_cha,		0X20000c00
+	.equ shang_ci_cha,		0x20000c04
+	.equ shang_ci_i,		0x20000c08
+	.equ anjianyanshi,		0x20000c0c
+	
+	.equ dianyabiao,		0x20000c18
 	.equ lvboqizhizhen1,		0x20000f00
 	.equ lvboqihuanchong1,		0x20000f04
 	.section .text
@@ -294,12 +294,8 @@ _tim3chushiha:
 	movs r1, # 0x81
 	str r1, [r0]
 _tingting:
-@	ldr r0, = 0x20000530
-	@	ldr r2, = 0x20000590
-	ldr r0, = dianyabiao
-	movs r2, r0
-	adds r0, r0, # 0x30
-	adds r2, r2, # 0x90
+	ldr r0, = 0x20000530
+	ldr r2, = 0x20000590
 	ldrh r1, [r0]
 	ldrh r3, [r2]
 	subs r3, r3, r1
